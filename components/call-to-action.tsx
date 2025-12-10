@@ -29,25 +29,13 @@ export function CallToAction() {
 
   return (
     <section id="contacto" ref={sectionRef} className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 grid-background opacity-20" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-
       <div className="max-w-5xl mx-auto relative z-10">
         <div
-          className={`glass rounded-[2rem] p-12 md:p-20 text-center relative overflow-hidden group ${isVisible ? "animate-scale-in" : "opacity-0"}`}
+          className={`glass rounded-2xl p-12 md:p-20 text-center relative overflow-hidden border border-primary/10 ${isVisible ? "animate-scale-in" : "opacity-0"}`}
         >
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-full blur-[100px] animate-float-slow" />
-          <div
-            className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tl from-accent/30 to-primary/30 rounded-full blur-[100px] animate-float-slow"
-            style={{ animationDelay: "2s" }}
-          />
-
-          <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-primary/50 rounded-tl-3xl" />
-          <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-secondary/50 rounded-br-3xl" />
-
           <div className="relative z-10">
             <div
-              className={`inline-flex items-center gap-2 glass px-6 py-3 rounded-full mb-8 ${isVisible ? "animate-bounce-in" : "opacity-0"}`}
+              className={`inline-flex items-center gap-2 glass px-6 py-3 rounded-full mb-8 border border-primary/10 ${isVisible ? "animate-bounce-in" : "opacity-0"}`}
               style={{ animationDelay: "0.2s" }}
             >
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
@@ -55,17 +43,16 @@ export function CallToAction() {
             </div>
 
             <h2
-              className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight ${isVisible ? "animate-reveal-up" : "opacity-0"}`}
+              className={`text-4xl sm:text-5xl font-semibold mb-6 leading-tight tracking-tight ${isVisible ? "animate-reveal-up" : "opacity-0"}`}
               style={{ animationDelay: "0.3s" }}
             >
-              <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient mb-2">
-                ¿Listo para
+              <span className="block bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent mb-2">
+                ¿Listo para el Futuro?
               </span>
-              <span className="block text-foreground text-shadow-glow animate-text-glow">el Futuro?</span>
             </h2>
 
             <p
-              className={`text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed ${isVisible ? "animate-reveal-up" : "opacity-0"}`}
+              className={`text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed ${isVisible ? "animate-reveal-up" : "opacity-0"}`}
               style={{ animationDelay: "0.4s" }}
             >
               Da el salto a la tecnología de vending más avanzada de Mallorca
@@ -77,50 +64,47 @@ export function CallToAction() {
             >
               <Button
                 size="lg"
-                className="touch-feedback group text-lg px-10 py-7 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-2xl shadow-primary/50 hover:shadow-primary/70 active:scale-95 transform hover:scale-105 transition-all duration-300 font-black relative overflow-hidden"
+                className="touch-feedback group text-base px-10 py-6 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-200 font-medium"
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="flex items-center gap-2">
                   Solicitar Presupuesto
-                  <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={20} />
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Button>
-
-
             </div>
 
             <div className="grid sm:grid-cols-3 gap-6 pt-12 border-t border-border/50">
               {[
-                { icon: Phone, label: "Teléfono", value: "+34 692 129 851", color: "primary" },
-                { icon: Mail, label: "Email", value: "info@lifyvending.com", color: "secondary" },
-                { icon: Clock, label: "Horario", value: "24/7 Todo el año", color: "accent" },
+                { icon: Phone, label: "Teléfono", value: "+34 692 129 851" },
+                { icon: Mail, label: "Email", value: "info@lifyvending.com" },
+                { icon: Clock, label: "Horario", value: "24/7 Todo el año" },
               ].map((item, i) => (
                 <div
                   key={i}
-                  className={`glass glass-hover rounded-2xl p-6 group touch-feedback ${isVisible ? "animate-scale-in" : "opacity-0"}`}
+                  className={`glass glass-hover rounded-xl p-6 group touch-feedback border border-primary/10 ${isVisible ? "animate-scale-in" : "opacity-0"}`}
                   style={{ animationDelay: `${0.6 + i * 0.1}s` }}
                 >
                   <item.icon
-                    className={`text-${item.color} mx-auto mb-3 group-hover:scale-125 transition-transform duration-300`}
-                    size={32}
+                    className="text-primary mx-auto mb-3 group-hover:scale-105 transition-transform"
+                    size={28}
                   />
-                  <p className="text-xs text-muted-foreground mb-1 uppercase tracking-wider">{item.label}</p>
-                  <p className={`font-bold text-${item.color}`}>{item.value}</p>
+                  <p className="text-xs text-muted-foreground mb-1 uppercase tracking-wide">{item.label}</p>
+                  <p className="font-semibold text-foreground">{item.value}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-12 inline-flex items-center gap-3 glass px-6 py-3 rounded-full">
+            <div className="mt-12 inline-flex items-center gap-3 glass px-6 py-3 rounded-full border border-primary/10">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary border-2 border-background"
+                    className="w-8 h-8 rounded-full bg-primary/20 border-2 border-background"
                   />
                 ))}
               </div>
               <span className="text-sm font-medium">
-                <span className="text-primary dark:text-accent font-bold">70+</span> empresas confían en nosotros
+                <span className="text-primary dark:text-accent font-semibold">70+</span> empresas confían en nosotros
               </span>
             </div>
           </div>

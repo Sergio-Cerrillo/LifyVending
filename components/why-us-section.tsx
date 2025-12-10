@@ -67,14 +67,11 @@ export function WhyUsSection() {
             <span className="text-sm font-medium text-primary dark:text-accent">Certificados de Excelencia</span>
           </div>
 
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="block text-foreground mb-2">¿Por Qué</span>
-            <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Elegirnos?
-            </span>
+          <h2 className="text-4xl sm:text-5xl font-semibold mb-6 leading-tight tracking-tight">
+            <span className="block text-foreground mb-2">¿Por Qué Elegirnos?</span>
           </h2>
 
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Más de una década liderando la innovación en vending
           </p>
         </div>
@@ -86,15 +83,15 @@ export function WhyUsSection() {
             return (
               <div
                 key={index}
-                className="glass glass-hover rounded-2xl p-8 text-center group"
+                className="glass glass-hover rounded-xl p-8 text-center group border border-primary/10"
               >
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${stat.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className="w-8 h-8 text-white" />
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/5 mb-6 group-hover:bg-primary/10 transition-colors">
+                  <Icon className="w-7 h-7 text-primary" />
                 </div>
-                <div className={`text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
+                <div className="text-3xl font-bold text-foreground mb-2">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wider font-light">
+                <div className="text-sm text-muted-foreground uppercase tracking-wide font-medium">
                   {stat.label}
                 </div>
               </div>
@@ -109,13 +106,13 @@ export function WhyUsSection() {
             return (
               <div
                 key={index}
-                className="glass glass-hover rounded-2xl p-8 group"
+                className="glass glass-hover rounded-xl p-8 group border border-primary/10"
               >
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <Icon className="w-7 h-7 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-bold text-xl mb-4 text-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed font-light">{feature.description}</p>
+                <h3 className="font-semibold text-lg mb-4 text-foreground">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
             )
           })}

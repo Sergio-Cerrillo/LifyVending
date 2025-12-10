@@ -38,23 +38,23 @@ export function HeroSection() {
         </div>
 
         <h1
-          className={`text-6xl sm:text-7xl lg:text-8xl font-black mb-8 leading-none ${isVisible ? "animate-reveal-up" : "opacity-0"}`}
+          className={`text-5xl sm:text-6xl lg:text-7xl font-semibold mb-8 leading-tight tracking-tight ${isVisible ? "animate-reveal-up" : "opacity-0"}`}
           style={{ animationDelay: "0.1s" }}
         >
-          <span className="block mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient">
-            MÁQUINAS VENDING
+          <span className="block mb-2 bg-gradient-to-r from-primary via-emerald-600 to-emerald-500 bg-clip-text text-transparent">
+            Máquinas Vending
           </span>
           <span className="block text-foreground relative">
             <span className="absolute inset-0 blur-3xl bg-primary/30 transform scale-110"></span>
-            <span className="relative">SOLO BENEFICIOS</span>
+            <span className="relative">Solo Beneficios</span>
           </span>
         </h1>
 
         <p
-          className={`text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed font-light ${isVisible ? "animate-reveal-up" : "opacity-0"}`}
+          className={`text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed ${isVisible ? "animate-reveal-up" : "opacity-0"}`}
           style={{ animationDelay: "0.2s" }}
         >
-          Nosotros instalamos, mantenemos y reponemos. Tú solo recibes tu <span className="text-primary font-bold">comisión</span> sin preocupaciones
+          Nosotros instalamos, mantenemos y reponemos. Tú solo recibes tu <span className="text-primary font-semibold">comisión</span> sin preocupaciones
         </p>
 
         <div
@@ -62,24 +62,21 @@ export function HeroSection() {
           style={{ animationDelay: "0.3s" }}
         >
           {[
-            { value: "0€", label: "Inversión", icon: "💰" },
-            { value: "100%", label: "Mantenimiento", icon: "🔧" },
-            { value: "24/7", label: "Soporte", icon: "🚀" },
+            { value: "0€", label: "Inversión" },
+            { value: "100%", label: "Mantenimiento" },
+            { value: "24/7", label: "Soporte" },
           ].map((stat, index) => (
             <div
               key={index}
-              className="glass glass-hover rounded-2xl px-8 py-6 min-w-40 group touch-feedback"
+              className="glass glass-hover rounded-xl px-8 py-6 min-w-40 group touch-feedback border border-primary/10"
               style={{
                 animationDelay: `${0.4 + index * 0.1}s`,
               }}
             >
-              <div className="text-4xl mb-2 transform group-hover:scale-125 transition-transform duration-300">
-                {stat.icon}
-              </div>
-              <div className="text-3xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1">
+              <div className="text-4xl font-bold bg-gradient-to-br from-primary to-emerald-600 bg-clip-text text-transparent mb-1">
                 {stat.value}
               </div>
-              <div className="text-sm text-muted-foreground uppercase tracking-wider font-light">{stat.label}</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-wide font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -91,12 +88,12 @@ export function HeroSection() {
           <Link href="#contacto">
             <Button
               size="lg"
-              className="touch-feedback text-lg px-10 py-7 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 shadow-2xl shadow-primary/50 hover:shadow-primary/80 active:scale-95 transform hover:scale-105 transition-all duration-300 font-bold relative overflow-hidden group"
+              className="touch-feedback text-base px-10 py-6 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-200 font-medium"
             >
-              <span className="relative z-10 flex items-center gap-3">
+              <span className="flex items-center gap-2">
                 <span>Solicitar Información</span>
                 <svg
-                  className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  className="w-4 h-4"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -104,13 +101,12 @@ export function HeroSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-20 transition-opacity" />
             </Button>
           </Link>
         </div>
 
-        <div className={`text-sm text-muted-foreground font-light ${isVisible ? "animate-fade-in" : "opacity-0"}`} style={{ animationDelay: "0.9s" }}>
-          🏆 Más de 500 clientes confían en nosotros • 🔧 Mantenimiento incluido • 📞 Soporte 24/7
+        <div className={`text-sm text-muted-foreground ${isVisible ? "animate-fade-in" : "opacity-0"}`} style={{ animationDelay: "0.9s" }}>
+          Más de 500 clientes confían en nosotros • Mantenimiento incluido • Soporte 24/7
         </div>
       </div>
     </section>

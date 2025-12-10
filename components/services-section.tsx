@@ -9,36 +9,28 @@ const services = [
     name: "Máquinas Vending",
     description: "Snacks, bebidas y productos frescos de máxima calidad",
     icon: Zap,
-    gradient: "from-primary to-secondary",
     features: ["Stock ilimitado", "Pago contactless", "Control remoto"],
-    emoji: "⚡",
   },
   {
     id: 2,
     name: "Máquinas de Café",
     description: "Café espresso profesional de barista automático",
     icon: Coffee,
-    gradient: "from-secondary to-accent",
     features: ["Granos premium", "12 variedades", "Limpieza automática"],
-    emoji: "☕",
   },
   {
     id: 3,
     name: "Máquinas de Agua",
     description: "Agua pura con sistema de filtración de 7 etapas",
     icon: Droplet,
-    gradient: "from-accent to-primary",
     features: ["Filtración UV", "Fría y caliente", "Ahorro ecológico"],
-    emoji: "💧",
   },
   {
     id: 4,
     name: "Servicio Técnico",
     description: "Mantenimiento preventivo y soporte inmediato",
     icon: Wrench,
-    gradient: "from-primary via-secondary to-accent",
     features: ["Respuesta 15min", "Técnicos 24/7", "Repuestos originales"],
-    emoji: "🔧",
   },
 ]
 
@@ -75,17 +67,13 @@ export function ServicesSection() {
             <span className="text-sm font-medium text-primary dark:text-accent">Soluciones Premium</span>
           </div>
 
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight">
-            <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient">
-              Nuestros
-            </span>
-            <span className="block text-foreground relative">
-              <span className="absolute inset-0 blur-3xl bg-primary/30 transform scale-110"></span>
-              <span className="relative">Servicios</span>
+          <h2 className="text-4xl sm:text-5xl font-semibold mb-6 leading-tight tracking-tight">
+            <span className="block bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
+              Nuestros Servicios
             </span>
           </h2>
 
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Soluciones completas con tecnología de última generación
           </p>
         </div>
@@ -100,7 +88,7 @@ export function ServicesSection() {
               <div
                 key={service.id}
                 data-service-id={service.id}
-                className={`group relative glass glass-hover rounded-3xl p-8 overflow-hidden touch-feedback ${isVisible ? "animate-reveal-up" : "opacity-0"
+                className={`group relative glass glass-hover rounded-xl p-8 overflow-hidden touch-feedback border border-primary/10 ${isVisible ? "animate-reveal-up" : "opacity-0"
                   }`}
                 onMouseEnter={() => setHoveredId(service.id)}
                 onMouseLeave={() => setHoveredId(null)}
@@ -108,78 +96,56 @@ export function ServicesSection() {
                   animationDelay: `${index * 0.15}s`,
                 }}
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-all duration-500`}
-                />
-
-                <div
-                  className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${service.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500`}
-                />
-
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-6">
                     <div
-                      className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${service.gradient} p-0.5 transform ${isHovered ? "scale-110 rotate-6" : ""
-                        } active:scale-95 transition-all duration-300`}
+                      className={`w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center transform ${isHovered ? "scale-105" : ""
+                        } transition-all duration-200`}
                     >
-                      <div className="w-full h-full bg-background rounded-2xl flex items-center justify-center">
-                        <Icon className="text-primary" size={36} />
-                      </div>
-                    </div>
-                    <div className="text-5xl transform group-hover:scale-125 group-active:scale-110 transition-transform duration-300">
-                      {service.emoji}
+                      <Icon className="text-primary" size={32} />
                     </div>
                   </div>
 
-                  <h3 className="text-3xl font-black mb-3 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                  <h3 className="text-2xl font-semibold mb-3 text-foreground">
                     {service.name}
                   </h3>
-                  <p className="text-muted-foreground mb-6 text-lg">{service.description}</p>
+                  <p className="text-muted-foreground mb-6">{service.description}</p>
 
                   <div className="space-y-3">
                     {service.features.map((feature, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-3 text-sm font-medium"
-                        style={{
-                          animation: isHovered ? `slide-up 0.3s ease-out ${i * 0.1}s both` : "none",
-                        }}
+                        className="flex items-center gap-3 text-sm"
                       >
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.gradient}`} />
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                         <span>{feature}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="absolute top-6 right-6 glass px-3 py-1 rounded-full text-xs font-bold">Premium</div>
+                  <div className="absolute top-6 right-6 bg-primary/10 px-3 py-1 rounded-md text-xs font-medium text-primary">Premium</div>
                 </div>
               </div>
             )
           })}
         </div>
 
-        <div className="glass rounded-3xl p-12 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5" />
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-
-          <h3 className="text-3xl font-black text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <div className="glass rounded-xl p-12 relative overflow-hidden border border-primary/10">
+          <h3 className="text-3xl font-semibold text-center mb-12 bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
             Ventajas Competitivas
           </h3>
 
           <div className="grid md:grid-cols-3 gap-12 relative z-10">
             {[
-              { value: "100%", label: "Dedicación Total", sublabel: "A tu proyecto", icon: "🎯" },
-              { value: "<15min", label: "Reposición Express", sublabel: "Tiempo récord", icon: "⚡" },
-              { value: "24/7/365", label: "Disponibilidad", sublabel: "Sin interrupciones", icon: "🚀" },
+              { value: "100%", label: "Dedicación Total", sublabel: "A tu proyecto" },
+              { value: "<15min", label: "Reposición Express", sublabel: "Tiempo récord" },
+              { value: "24/7/365", label: "Disponibilidad", sublabel: "Sin interrupciones" },
             ].map((stat, i) => (
               <div key={i} className="text-center group">
-                <div className="text-5xl mb-4 transform group-hover:scale-125 transition-transform duration-300">
-                  {stat.icon}
-                </div>
-                <div className="text-5xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2 ">
+                <div className="text-4xl font-bold bg-gradient-to-br from-primary to-emerald-600 bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
-                <div className="text-lg font-bold text-foreground mb-1">{stat.label}</div>
+                <div className="text-base font-semibold text-foreground mb-1">{stat.label}</div>
                 <div className="text-sm text-muted-foreground">{stat.sublabel}</div>
               </div>
             ))}
